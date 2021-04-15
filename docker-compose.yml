@@ -1,14 +1,11 @@
 version: '3'
 services:
   db_postgresql:
-    image: postgres:9.6
+    image: postgres:latest
     restart: always
     volumes:
-      - ./postgres-data:/var/lib/db_postgresql/data
+      - ./database:/var/lib/postgresql/data
     ports:
       - 5432:5432
     env_file:
       - ./.env
-
-volumes:
-  db_postgresql:
